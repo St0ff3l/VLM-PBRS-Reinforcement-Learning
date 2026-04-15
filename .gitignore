@@ -1,0 +1,39 @@
+# 深度学习/强化学习 专用忽略清单
+
+# Python 环境
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+final_project_env/
+.env
+
+# IDE 配置
+.idea/
+.vscode/
+
+# 忽略运行结果和日志
+logs_and_results/tensorboard_baseline/
+logs_and_results/*.mp4
+logs_and_results/*.zip
+logs_and_results/*
+!logs_and_results/.gitkeep
+logs_and_results
+
+# 忽略临时截图（如果你之后要存图测试 LLaVA）
+*.png
+!vlm/test_frame.png
+*.jpg
+*.jpeg
+*.gif
+
+# 模型权重与大型数据
+*.pth
+*.pkl
+*.h5
+*.zip
+checkpoint/
+
+# 系统文件
+.DS_Store
+Thumbs.db

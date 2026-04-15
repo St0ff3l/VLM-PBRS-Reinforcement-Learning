@@ -1,0 +1,23 @@
+# --- Core Deep Learning & RL ---
+# Install torch via: pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+torch>=2.0.0
+gymnasium[classic_control,box2d,atari]
+stable-baselines3[extra]
+shimmy>=2.0
+
+# --- VLM & Communication ---
+ollama
+httpx
+pydantic
+
+# --- Computer Vision & Media ---
+opencv-python
+pillow
+imageio[ffmpeg]
+matplotlib
+pandas
+numpy
+
+# --- Tools ---
+tensorboard
+ipykernel
