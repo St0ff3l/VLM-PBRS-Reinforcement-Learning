@@ -171,14 +171,7 @@ class AdaptiveVisualPBRS_Wrapper(gym.Wrapper):
         # update phi state
         self.current_phi = next_phi
 
-        # --- HYBRID KINEMATIC INJECTION ---
-        # Provides the necessary micro-dense trajectory guidance that 7B VLMs lack spatial resolution for.
-        position = float(obs[0])
-        kinematic_reward = 0.0
-        if position > -0.4:
-            kinematic_reward = (position + 0.4) * 2.0
-
-        total_reward = clean_env_reward + shaped_reward + kinematic_reward
+        total_reward = clean_env_reward + shaped_reward
 
         info['vlm_calls'] = self.vlm_call_count
         info['vlm_queried_this_step'] = queried_this_step

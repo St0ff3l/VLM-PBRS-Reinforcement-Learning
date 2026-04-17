@@ -11,7 +11,7 @@ import os
 import json
 import datetime
 
-DEFAULT_THRESHOLDS = [-195.0, -190.0, -185.0, -180.0, -175.0, -170.0, -165.0, -160.0, -155.0, -150.0, -145.0, -140.0, -135.0, -130.0, -125.0, -120.0, -115.0, -110.0]
+DEFAULT_THRESHOLDS = [-195.0, -190.0, -185.0, -180.0, -175.0, -170.0, -165.0, -160.0]
 DEFAULT_VLM_MSE_THRESHOLD = 69.84652538597584
 DEFAULT_RUN_MODE = "combo"
 
@@ -209,10 +209,10 @@ def parse_args() -> argparse.Namespace:
         ),
     )
     parser.add_argument("--env-id", type=str, default="MountainCar-v0")
-    parser.add_argument("--baseline-timesteps", type=int, default=400_000)
-    parser.add_argument("--baseline-run-name-prefix", type=str, default="Baseline_PPO")
-    parser.add_argument("--timesteps", type=int, default=400_000)
-    parser.add_argument("--run-name-prefix", type=str, default="Hierarchical_Hybrid_VLM_PPO")
+    parser.add_argument("--baseline-timesteps", type=int, default=600_000)
+    parser.add_argument("--baseline-run-name-prefix", type=str, default="baseline_ppo")
+    parser.add_argument("--timesteps", type=int, default=150_000)
+    parser.add_argument("--run-name-prefix", type=str, default="ours_vlm_fast")
     parser.add_argument(
         "--mse-threshold",
         type=float,
